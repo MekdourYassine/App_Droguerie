@@ -1,0 +1,1205 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs,  StdCtrls, ExtCtrls, sPanel,
+  sGroupBox, jpeg, acImage, Buttons, sSpeedButton, Menus, sSpinEdit, sEdit,
+  sLabel, Mask, sMaskEdit, sCustomComboEdit, sCurrEdit, sCurrencyEdit,
+  Grids, DBGrids, sComboBox, sSkinProvider, sSkinManager;
+type
+  TForm1 = class(TForm)
+    sPanel1: TsPanel;
+    sImage1: TsImage;
+    sGroupBox1: TsGroupBox;
+    sGroupBox2: TsGroupBox;
+    sGroupBox3: TsGroupBox;
+    sGroupBox4: TsGroupBox;
+    sSpeedButton1: TsSpeedButton;
+    sSpeedButton4: TsSpeedButton;
+    sSpeedButton6: TsSpeedButton;
+    MainMenu1: TMainMenu;
+    P1: TMenuItem;
+    V1: TMenuItem;
+    S1: TMenuItem;
+    A1: TMenuItem;
+    A2: TMenuItem;
+    M1: TMenuItem;
+    S2: TMenuItem;
+    R1: TMenuItem;
+    V2: TMenuItem;
+    F1: TMenuItem;
+    P2: TMenuItem;
+    F2: TMenuItem;
+    A3: TMenuItem;
+    A4: TMenuItem;
+    sPanel2: TsPanel;
+    sGroupBox5: TsGroupBox;
+    sLabel1: TsLabel;
+    sLabel2: TsLabel;
+    sLabel3: TsLabel;
+    sEdit1: TsEdit;
+    sDecimalSpinEdit1: TsDecimalSpinEdit;
+    sSpeedButton7: TsSpeedButton;
+    sSpeedButton8: TsSpeedButton;
+    sCurrencyEdit1: TsCurrencyEdit;
+    sPanel3: TsPanel;
+    sGroupBox6: TsGroupBox;
+    sGroupBox7: TsGroupBox;
+    sLabel4: TsLabel;
+    sEdit2: TsEdit;
+    sLabel5: TsLabel;
+    sDecimalSpinEdit2: TsDecimalSpinEdit;
+    sLabel6: TsLabel;
+    sCurrencyEdit2: TsCurrencyEdit;
+    sLabel7: TsLabel;
+    sCurrencyEdit3: TsCurrencyEdit;
+    sSpeedButton9: TsSpeedButton;
+    sSpeedButton10: TsSpeedButton;
+    sSpeedButton2: TsSpeedButton;
+    sSpeedButton3: TsSpeedButton;
+    sSpeedButton11: TsSpeedButton;
+    sPanel4: TsPanel;
+    sGroupBox8: TsGroupBox;
+    sLabel8: TsLabel;
+    sLabel9: TsLabel;
+    sLabel10: TsLabel;
+    sComboBox1: TsComboBox;
+    sDecimalSpinEdit3: TsDecimalSpinEdit;
+    sCurrencyEdit4: TsCurrencyEdit;
+    sComboBox2: TsComboBox;
+    sDecimalSpinEdit4: TsDecimalSpinEdit;
+    sCurrencyEdit5: TsCurrencyEdit;
+    sComboBox3: TsComboBox;
+    sDecimalSpinEdit5: TsDecimalSpinEdit;
+    sCurrencyEdit6: TsCurrencyEdit;
+    sComboBox4: TsComboBox;
+    sComboBox5: TsComboBox;
+    sDecimalSpinEdit6: TsDecimalSpinEdit;
+    sDecimalSpinEdit7: TsDecimalSpinEdit;
+    sCurrencyEdit8: TsCurrencyEdit;
+    sCurrencyEdit9: TsCurrencyEdit;
+    sGroupBox9: TsGroupBox;
+    sLabel11: TsLabel;
+    sLabel12: TsLabel;
+    sSpeedButton12: TsSpeedButton;
+    sSpeedButton14: TsSpeedButton;
+    sSpeedButton13: TsSpeedButton;
+    sComboBox6: TsComboBox;
+    sDecimalSpinEdit8: TsDecimalSpinEdit;
+    sCurrencyEdit7: TsCurrencyEdit;
+    sCurrencyEdit10: TsCurrencyEdit;
+    sDecimalSpinEdit9: TsDecimalSpinEdit;
+    sComboBox7: TsComboBox;
+    DBGrid1: TDBGrid;
+    sDecimalSpinEdit10: TsDecimalSpinEdit;
+    sLabel13: TsLabel;
+    sLabel14: TsLabel;
+    sLabel15: TsLabel;
+    sGroupBox10: TsGroupBox;
+    sLabel16: TsLabel;
+    sComboBox8: TsComboBox;
+    sLabel17: TsLabel;
+    sComboBox9: TsComboBox;
+    sLabel18: TsLabel;
+    sComboBox10: TsComboBox;
+    sLabel19: TsLabel;
+    sComboBox11: TsComboBox;
+    sLabel20: TsLabel;
+    sLabel21: TsLabel;
+    sLabel22: TsLabel;
+    sLabel23: TsLabel;
+    sSpeedButton5: TsSpeedButton;
+    sLabel24: TsLabel;
+    sComboBox12: TsComboBox;
+    sLabel25: TsLabel;
+    sGroupBox11: TsGroupBox;
+    sLabel26: TsLabel;
+    sLabel27: TsLabel;
+    sLabel28: TsLabel;
+    sLabel29: TsLabel;
+    sLabel30: TsLabel;
+    sLabel31: TsLabel;
+    sLabel32: TsLabel;
+    sLabel33: TsLabel;
+    sLabel34: TsLabel;
+    sLabel35: TsLabel;
+    sSpeedButton15: TsSpeedButton;
+    sSkinManager1: TsSkinManager;
+    sSkinProvider1: TsSkinProvider;
+    procedure sSpeedButton1Click(Sender: TObject);
+    procedure sSpeedButton8Click(Sender: TObject);
+    procedure sSpeedButton6Click(Sender: TObject);
+    procedure sSpeedButton10Click(Sender: TObject);
+    procedure sSpeedButton4Click(Sender: TObject);
+    procedure sSpeedButton11Click(Sender: TObject);
+    procedure sSpeedButton13Click(Sender: TObject);
+    procedure sSpeedButton5Click(Sender: TObject);
+    procedure sSpeedButton2Click(Sender: TObject);
+    procedure sSpeedButton9Click(Sender: TObject);
+    procedure sSpeedButton3Click(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure sSpeedButton7Click(Sender: TObject);
+    procedure sComboBox1Click(Sender: TObject);
+    procedure sComboBox2Click(Sender: TObject);
+    procedure sComboBox3Click(Sender: TObject);
+    procedure sComboBox4Click(Sender: TObject);
+    procedure sComboBox5Click(Sender: TObject);
+    procedure sComboBox6Click(Sender: TObject);
+    procedure sComboBox7Click(Sender: TObject);
+    procedure sLabel11Click(Sender: TObject);
+    procedure sLabel12Click(Sender: TObject);
+    procedure sSpeedButton12Click(Sender: TObject);
+    procedure P2Click(Sender: TObject);
+    procedure sSpeedButton15Click(Sender: TObject);
+    procedure F2Click(Sender: TObject);
+    procedure A2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+uses Unit2, facturation_vente, DB, DateUtils;
+
+{$R *.dfm}
+
+procedure TForm1.sSpeedButton1Click(Sender: TObject);
+begin
+sPanel4.Visible:=false;
+sGroupBox8.Visible:=false;
+
+sGroupBox10.Visible:=false;
+sGroupBox11.Visible:=false;
+
+sPanel3.Visible:=false;
+sGroupBox6.Visible:=false;
+
+sPanel2.Visible:=true;
+sGroupBox5.Visible:=true;
+end;
+
+procedure TForm1.sSpeedButton8Click(Sender: TObject);
+begin
+if MessageDlg('Etes-vous sûr de vouloir annuler L ajout des produits ?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+begin
+sPanel2.Visible:=false;
+sGroupBox5.Visible:=false;
+end;
+end;
+
+
+
+procedure TForm1.sSpeedButton6Click(Sender: TObject);
+begin
+if MessageDlg('Etes-vous sûr de vouloir quitter lapplication ?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+begin
+close();
+end;
+
+end;
+
+procedure TForm1.sSpeedButton10Click(Sender: TObject);
+begin
+if MessageDlg('Etes-vous sûr de vouloir annuler La recherche des produits ?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+begin
+sPanel3.Visible:=false;
+sGroupBox6.Visible:=false;
+end;
+
+
+
+end;
+
+procedure TForm1.sSpeedButton4Click(Sender: TObject);
+var i,j : integer;
+begin
+sCurrencyEdit4.Text:='0';
+sCurrencyEdit5.Text:='0';
+sCurrencyEdit6.Text:='0';
+sCurrencyEdit7.Text:='0';
+sCurrencyEdit8.Text:='0';
+sCurrencyEdit9.Text:='0';
+sCurrencyEdit10.Text:='0';
+
+sDecimalSpinEdit3.Text:='1';
+sDecimalSpinEdit4.Text:='1';
+sDecimalSpinEdit5.Text:='1';
+sDecimalSpinEdit6.Text:='1';
+sDecimalSpinEdit7.Text:='1';
+sDecimalSpinEdit8.Text:='1';
+sDecimalSpinEdit9.Text:='1';
+
+sComboBox1.Text:='';
+sComboBox2.Text:='';
+sComboBox3.Text:='';
+sComboBox4.Text:='';
+sComboBox5.Text:='';
+sComboBox6.Text:='';
+sComboBox7.Text:='';
+
+sLabel12.Caption:='                   DA';
+
+
+sPanel3.Visible:=false;
+sGroupBox6.Visible:=false;
+sPanel2.Visible:=false;
+sGroupBox5.Visible:=false;
+
+sGroupBox10.Visible:=false;
+sGroupBox11.Visible:=false;
+
+
+sPanel4.Visible:=true;
+sGroupBox8.Visible:=true;
+
+
+DataModule2.ADOTable1.Close;
+//datamodule2.DataSource1.DataSet:=datamodule2.ADOTable1;
+
+DataModule2.ADOTable1.Open;
+i:=datamodule2.ADOTable1.RecordCount;
+
+sComboBox1.Items.BeginUpdate;
+sComboBox1.Items.Clear;
+
+sComboBox2.Items.BeginUpdate;
+sComboBox2.Items.Clear;
+
+sComboBox3.Items.BeginUpdate;
+sComboBox3.Items.Clear;
+
+sComboBox4.Items.BeginUpdate;
+sComboBox4.Items.Clear;
+
+
+sComboBox5.Items.BeginUpdate;
+sComboBox5.Items.Clear;
+
+sComboBox6.Items.BeginUpdate;
+sComboBox6.Items.Clear;
+
+sComboBox7.Items.BeginUpdate;
+sComboBox7.Items.Clear;
+
+
+for j := 1 to i do
+begin
+with datamodule2.ADOTable1 do
+begin
+sComboBox1.Items.Add(datamodule2.ADOTable1.FieldByName('nom_produit').AsString);
+sComboBox2.Items.Add(datamodule2.ADOTable1.FieldByName('nom_produit').AsString);
+sComboBox3.Items.Add(datamodule2.ADOTable1.FieldByName('nom_produit').AsString);
+sComboBox4.Items.Add(datamodule2.ADOTable1.FieldByName('nom_produit').AsString);
+sComboBox5.Items.Add(datamodule2.ADOTable1.FieldByName('nom_produit').AsString);
+sComboBox6.Items.Add(datamodule2.ADOTable1.FieldByName('nom_produit').AsString);
+sComboBox7.Items.Add(datamodule2.ADOTable1.FieldByName('nom_produit').AsString);
+
+
+end;
+datamodule2.ADOTable1.Next;
+
+end;
+sComboBox1.Items.EndUpdate;
+sComboBox2.Items.EndUpdate;
+sComboBox3.Items.EndUpdate;
+sComboBox4.Items.EndUpdate;
+sComboBox5.Items.EndUpdate;
+sComboBox6.Items.EndUpdate;
+sComboBox7.Items.EndUpdate;
+
+end;
+
+procedure TForm1.sSpeedButton11Click(Sender: TObject);
+begin
+
+sPanel4.Visible:=false;
+sGroupBox8.Visible:=false;
+sPanel2.Visible:=false;
+sGroupBox5.Visible:=false;
+
+sGroupBox10.Visible:=false;
+sGroupBox11.Visible:=false;
+
+
+sPanel3.Visible:=true;
+sGroupBox6.Visible:=true;
+
+
+
+end;
+
+procedure TForm1.sSpeedButton13Click(Sender: TObject);
+begin
+if MessageDlg('Etes-vous sûr de vouloir annuler opération de vente ?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+begin
+sPanel4.Visible:=false;
+sGroupBox8.Visible:=false;
+sPanel2.Visible:=false;
+sGroupBox5.Visible:=false;
+
+sPanel3.Visible:=false;
+sGroupBox6.Visible:=false;
+
+
+end;
+end;
+procedure TForm1.sSpeedButton5Click(Sender: TObject);
+begin
+sPanel4.Visible:=false;
+sGroupBox8.Visible:=false;
+sPanel2.Visible:=false;
+sGroupBox5.Visible:=false;
+
+sPanel3.Visible:=false;
+sGroupBox6.Visible:=false;
+sGroupBox10.Visible:=false;
+sComboBox8.Text:='';
+sComboBox9.Text:='';
+sComboBox10.Text:='';
+sComboBox11.Text:='';
+sComboBox12.Text:='';
+
+
+end;
+
+procedure TForm1.sSpeedButton2Click(Sender: TObject);
+ var Modifier: TForm;
+    quantite: TsDecimalSpinEdit;
+    prix: TsCurrencyEdit;
+
+    id,verif,verif2,verif3,verif4 :string;
+
+begin
+if (dbgrid1.Visible=false) then
+begin
+ShowMessage('Erreur vous devez lancer la recherche et sélectionner un produit pour le modifier');
+end
+else
+begin
+ prix:=TsCurrencyEdit.Create(Nil);
+ quantite:=TsDecimalSpinEdit.Create(Nil);
+
+
+
+ // Créer le message modifier l'enregistrement (#13= Sauter la ligne entrer)
+
+ modifier := CreateMessageDialog('Modifier  Un produit                                   '+#13+#13+
+                                 'Quantité                                                         '+#13+#13+#13+
+                                'Prix                                              '+#13+#13+#13+#13
+                                ,mtInformation,[mbYes, mbCancel]);
+
+ with Modifier do
+ try
+ width :=0;
+ height :=900;
+ autoscroll:=false;
+ autosize:=true;
+
+
+
+ // Modifier la position de la zone de l'adresse
+ quantite.Parent:=modifier;
+ quantite.Left:=55;
+ quantite.Top:=50;
+ quantite.Width:=150;
+ quantite.Height:=30;
+
+ // Modifier la position de la zone de numero de telephone
+ prix.Parent:=modifier;
+ prix.Left:=55;
+ prix.Top:=100;
+ prix.Width:=150;
+ prix.Height:=30;
+
+
+// Remplir les valeurs de chaque zone de texte
+quantite.Text:= DataModule2.ADOTable1.Fields[3].AsString;
+prix.Text:= datamodule2.ADOTable1.Fields[2].AsString;
+
+
+
+
+ if (ShowModal = ID_YES) then
+Begin
+With datamodule2.ADOTable1 Do
+begin
+// Mettre la table mode d'edition = modification
+   Edit;
+// Donner la valeur de chaque champs ici on peux utiliser soit Fields[...] soit FieldsByName(...)
+   Fields[3].Value:=quantite.Text;
+   Fields[2].Value:=prix.Text;
+   Fields[5].Value:=date();
+
+// Valider l'enregistrement
+   Post;
+
+end;
+end;
+ finally
+ // Libérer les compos crées ainsi que la fiche modifier
+    quantite.Free;
+     prix.Free;
+    modifier.Free;
+
+
+end;
+end;
+end;
+
+
+procedure TForm1.sSpeedButton9Click(Sender: TObject);
+begin
+DBGrid1.Visible:=false;
+DBGrid1.Visible:=true;
+end;
+
+procedure TForm1.sSpeedButton3Click(Sender: TObject);
+begin
+if (dbgrid1.Visible=false) then
+begin
+ShowMessage('Erreur vous devez lancer la recherche');
+end
+else
+begin
+
+if MessageDlg('Etes-vous sûr de vouloir supprimer ce produit ', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  datamodule2.ADOTable1.Delete;
+end;
+end;
+
+procedure TForm1.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    begin
+
+        if DataModule2.ADOTable1.FieldByName('nom_produit').Asstring ='' then
+        begin
+        DBGrid1.Canvas.Brush.Color:= cllime;
+        DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+        end;
+        if (datamodule2.ADOTable1.FieldByName('nom_produit').Asstring=sedit2.Text) and  (sDecimalSpinEdit2.Text='0') and (sCurrencyEdit2.Text='0') and (sCurrencyEdit3.Text='0') and (sDecimalSpinEdit10.Text='0') then
+        begin
+
+        DBGrid1.Canvas.Brush.Color:= Clred;
+        DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+        end;
+
+        if (sedit2.Text='produit') and (datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger>=strtoint(sDecimalSpinEdit2.text)) and (datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger<=strtoint(sDecimalSpinEdit10.text))   then
+        begin
+        DBGrid1.Canvas.Brush.Color:= Clred;
+        DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+        end;
+
+        if (sedit2.Text='produit') and  (sDecimalSpinEdit2.text='0') and (sDecimalSpinEdit10.text='0')and (datamodule2.ADOTable1.FieldByName('Prix_produit').Asinteger >= strtoint(sCurrencyEdit2.Text)) and (datamodule2.ADOTable1.FieldByName('Prix_produit').Asinteger<=strtoint(scurrencyedit3.Text))   then
+        begin
+        DBGrid1.Canvas.Brush.Color:= Clred;
+        DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+        end;
+
+        if (datamodule2.ADOTable1.FieldByName('nom_produit').Asstring=sEdit2.Text) and  (datamodule2.ADOTable1.FieldByName('quantite_produit').Asstring=sdecimalspinedit2.Text) and (datamodule2.ADOTable1.FieldByName('Prix_produit').Asinteger >= strtoint(sCurrencyEdit2.Text)) and (datamodule2.ADOTable1.FieldByName('Prix_produit').Asinteger<=strtoint(scurrencyedit3.Text))   then
+        begin
+        DBGrid1.Canvas.Brush.Color:= Clred;
+        DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+        end;
+
+    end;
+
+
+procedure TForm1.sSpeedButton7Click(Sender: TObject);
+begin
+
+   DataModule2.ADOTable1.close;
+   DataModule2.ADOTable1.Open;
+   if (sEdit1.Text='Nom') or (sCurrencyEdit1.Text='0') or (sDecimalSpinEdit1.Text='0') then
+   ShowMessage('Erreur ! Vous devez remplir les champs nécessaires')
+   else
+   begin
+  With datamodule2.ADOTable1 Do
+  begin
+
+// Mettre la table sur nouveau enregistrement
+   Append;
+// Donner la valeur de chaque champs ici on peux utiliser soit Fields[...] soit FieldsByName(...)
+
+
+
+        datamodule2.ADOTable1.FieldByName('nom_produit').AsString:=sEdit1.Text;
+        datamodule2.ADOTable1.FieldByName('prix_produit').AsString:=sCurrencyEdit1.Text;
+        datamodule2.ADOTable1.FieldByName('quantite_produit').AsString:=sDecimalSpinEdit1.Text;
+        datamodule2.ADOTable1.FieldByName('date_ajout').AsDateTime:=date();
+        datamodule2.ADOTable1.FieldByName('date_modif').AsDateTime:=date();
+
+
+// Valider l'enregistrement
+   Post;
+   DataModule2.ADOTable1.Close;
+   sEdit1.Text:='Nom';
+   sCurrencyEdit1.Text:='0';
+   sDecimalSpinEdit1.Text:='0';
+   ShowMessage('Le produit est bien ajouté');
+
+  end;
+end;
+
+
+end;
+
+
+
+procedure TForm1.sComboBox1Click(Sender: TObject);
+var i,j:integer;
+begin
+
+DataModule2.ADOTable1.Close;
+datamodule2.DataSource1.DataSet:=datamodule2.ADOTable1;
+
+DataModule2.ADOTable1.Open;
+i:=datamodule2.ADOTable1.RecordCount;
+
+for j := 1 to i do
+begin
+with DataModule2.ADOTable1 do
+begin
+if (sComboBox1.Items[scombobox1.itemIndex]=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+if (strtoint(sDecimalSpinEdit3.Text)>strtoint(datamodule2.ADOTable1.Fields[3].AsString)) then
+begin
+ShowMessage('Erreur !! La quantité voulue dépasse la quantité stockée, Le max est :'+datamodule2.ADOTable1.Fields[3].AsString);
+sDecimalSpinEdit3.Text:=datamodule2.ADOTable1.Fields[3].AsString;
+end
+else
+sCurrencyEdit4.Text:=IntToStr(strtoint(datamodule2.ADOTable1.Fields[2].AsString)*strtoint(sDecimalSpinEdit3.Text))
+end;
+end;
+datamodule2.ADOTable1.Next;
+end;
+end;
+
+procedure TForm1.sComboBox2Click(Sender: TObject);
+var i,j:integer;
+begin
+
+DataModule2.ADOTable1.Close;
+datamodule2.DataSource1.DataSet:=datamodule2.ADOTable1;
+DataModule2.ADOTable1.Open;
+i:=datamodule2.ADOTable1.RecordCount;
+
+for j := 1 to i do
+begin
+with DataModule2.ADOTable1 do
+begin
+if (sComboBox2.Items[scombobox2.itemIndex]=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+if (strtoint(sDecimalSpinEdit4.Text)>strtoint(datamodule2.ADOTable1.Fields[3].AsString)) then
+begin
+ShowMessage('Erreur !! La quantité voulue dépasse la quantité stockée, Le max est :'+datamodule2.ADOTable1.Fields[3].AsString);
+sDecimalSpinEdit4.Text:=datamodule2.ADOTable1.Fields[3].AsString;
+end
+else
+sCurrencyEdit5.Text:=IntToStr(strtoint(datamodule2.ADOTable1.Fields[2].AsString)*strtoint(sDecimalSpinEdit4.Text))
+end;
+end;
+datamodule2.ADOTable1.Next;
+end;
+end;
+
+
+procedure TForm1.sComboBox3Click(Sender: TObject);
+var i,j:integer;
+begin
+
+DataModule2.ADOTable1.Close;
+datamodule2.DataSource1.DataSet:=datamodule2.ADOTable1;
+DataModule2.ADOTable1.Open;
+i:=datamodule2.ADOTable1.RecordCount;
+
+for j := 1 to i do
+begin
+with DataModule2.ADOTable1 do
+begin
+if (sComboBox3.Items[scombobox3.itemIndex]=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+if (strtoint(sDecimalSpinEdit5.Text)>strtoint(datamodule2.ADOTable1.Fields[3].AsString)) then
+begin
+ShowMessage('Erreur !! La quantité voulue dépasse la quantité stockée, Le max est :'+datamodule2.ADOTable1.Fields[3].AsString);
+sDecimalSpinEdit5.Text:=datamodule2.ADOTable1.Fields[3].AsString;
+end
+else
+sCurrencyEdit6.Text:=IntToStr(strtoint(datamodule2.ADOTable1.Fields[2].AsString)*strtoint(sDecimalSpinEdit5.Text))
+end;
+end;
+datamodule2.ADOTable1.Next;
+end;
+
+end;
+
+procedure TForm1.sComboBox4Click(Sender: TObject);
+var i,j:integer;
+begin
+
+DataModule2.ADOTable1.Close;
+datamodule2.DataSource1.DataSet:=datamodule2.ADOTable1;
+DataModule2.ADOTable1.Open;
+i:=datamodule2.ADOTable1.RecordCount;
+
+for j := 1 to i do
+begin
+with DataModule2.ADOTable1 do
+begin
+if (sComboBox4.Items[scombobox4.itemIndex]=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+if (strtoint(sDecimalSpinEdit6.Text)>strtoint(datamodule2.ADOTable1.Fields[3].AsString)) then
+begin
+ShowMessage('Erreur !! La quantité voulue dépasse la quantité stockée, Le max est :'+datamodule2.ADOTable1.Fields[3].AsString);
+sDecimalSpinEdit6.Text:=datamodule2.ADOTable1.Fields[3].AsString;
+end
+else
+sCurrencyEdit8.Text:=IntToStr(strtoint(datamodule2.ADOTable1.Fields[2].AsString)*strtoint(sDecimalSpinEdit6.Text))
+end;
+end;
+datamodule2.ADOTable1.Next;
+end;
+end;
+
+procedure TForm1.sComboBox5Click(Sender: TObject);
+var i,j:integer;
+begin
+
+DataModule2.ADOTable1.Close;
+datamodule2.DataSource1.DataSet:=datamodule2.ADOTable1;
+DataModule2.ADOTable1.Open;
+i:=datamodule2.ADOTable1.RecordCount;
+
+for j := 1 to i do
+begin
+with DataModule2.ADOTable1 do
+begin
+if (sComboBox5.Items[scombobox5.itemIndex]=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+if (strtoint(sDecimalSpinEdit7.Text)>strtoint(datamodule2.ADOTable1.Fields[3].AsString)) then
+begin
+ShowMessage('Erreur !! La quantité voulue dépasse la quantité stockée, Le max est :'+datamodule2.ADOTable1.Fields[3].AsString);
+sDecimalSpinEdit7.Text:=datamodule2.ADOTable1.Fields[3].AsString;
+end
+else
+
+sCurrencyEdit9.Text:=IntToStr(strtoint(datamodule2.ADOTable1.Fields[2].AsString)*strtoint(sDecimalSpinEdit7.Text))
+end;
+end;
+datamodule2.ADOTable1.Next;
+end;
+end;
+
+
+
+
+
+
+
+
+
+procedure TForm1.sComboBox6Click(Sender: TObject);
+var i,j:integer;
+begin
+
+DataModule2.ADOTable1.Close;
+datamodule2.DataSource1.DataSet:=datamodule2.ADOTable1;
+
+DataModule2.ADOTable1.Open;
+i:=datamodule2.ADOTable1.RecordCount;
+
+for j := 1 to i do
+begin
+with DataModule2.ADOTable1 do
+begin
+if (sComboBox6.Items[scombobox6.itemIndex]=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+if (strtoint(sDecimalSpinEdit8.Text)>strtoint(datamodule2.ADOTable1.Fields[3].AsString)) then
+begin
+ShowMessage('Erreur !! La quantité voulue dépasse la quantité stockée, Le max est :'+datamodule2.ADOTable1.Fields[3].AsString);
+sDecimalSpinEdit8.Text:=datamodule2.ADOTable1.Fields[3].AsString;
+end
+else
+sCurrencyEdit10.Text:=IntToStr(strtoint(datamodule2.ADOTable1.Fields[2].AsString)*strtoint(sDecimalSpinEdit8.Text))
+end;
+end;
+datamodule2.ADOTable1.Next;
+end;
+end;
+
+procedure TForm1.sComboBox7Click(Sender: TObject);
+var i,j:integer;
+begin
+
+DataModule2.ADOTable1.Close;
+datamodule2.DataSource1.DataSet:=datamodule2.ADOTable1;
+
+DataModule2.ADOTable1.Open;
+i:=datamodule2.ADOTable1.RecordCount;
+
+for j := 1 to i do
+begin
+with DataModule2.ADOTable1 do
+begin
+
+if (sComboBox7.Items[scombobox7.itemIndex]=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+if (strtoint(sDecimalSpinEdit9.Text)>strtoint(datamodule2.ADOTable1.Fields[3].AsString)) then
+begin
+ShowMessage('Erreur !! La quantité voulue dépasse la quantité stockée, Le max est :'+datamodule2.ADOTable1.Fields[3].AsString);
+sDecimalSpinEdit9.Text:=datamodule2.ADOTable1.Fields[3].AsString;
+end
+else
+sCurrencyEdit7.Text:=IntToStr(strtoint(datamodule2.ADOTable1.Fields[2].AsString)*strtoint(sDecimalSpinEdit9.Text))
+end;
+end;
+datamodule2.ADOTable1.Next;
+end;
+end;
+
+procedure TForm1.sLabel11Click(Sender: TObject);
+begin
+sLabel12.Caption:=inttostr(strtoint(sCurrencyEdit4.Text)+strtoint(sCurrencyEdit5.Text)+strtoint(sCurrencyEdit6.Text)+strtoint(sCurrencyEdit7.Text)+strtoint(sCurrencyEdit8.Text)+strtoint(sCurrencyEdit9.Text)+strtoint(sCurrencyEdit10.Text))+'DA';
+end;
+
+procedure TForm1.sLabel12Click(Sender: TObject);
+begin
+sLabel12.Caption:=inttostr(strtoint(sCurrencyEdit4.Text)+strtoint(sCurrencyEdit5.Text)+strtoint(sCurrencyEdit6.Text)+strtoint(sCurrencyEdit7.Text)+strtoint(sCurrencyEdit8.Text)+strtoint(sCurrencyEdit9.Text)+strtoint(sCurrencyEdit10.Text))+'DA';
+
+end;
+
+procedure TForm1.sSpeedButton12Click(Sender: TObject);
+var s: integer;
+    i,j : integer;
+begin
+if MessageDlg('Etes-vous sûr de vouloir valider opération de vente ?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+begin
+DataModule2.ADOTable2.Close;
+datamodule2.ADOTable1.Close;
+datamodule2.DataSource1.DataSet:=datamodule2.ADOTable1;
+DataModule2.ADOTable1.Open;
+DataModule2.ADOTable2.open;
+i:=datamodule2.ADOTable1.RecordCount;
+//s:=sLabel12.Caption;
+//Delete(s,length(s)-1,2);
+s:=strtoint(sCurrencyEdit4.Text)+strtoint(sCurrencyEdit5.Text)+strtoint(sCurrencyEdit6.Text)+strtoint(sCurrencyEdit7.Text)+strtoint(sCurrencyEdit8.Text)+strtoint(sCurrencyEdit9.Text)+strtoint(sCurrencyEdit10.Text);
+
+for j := 1 to i do
+begin
+with datamodule2.ADOTable1 do
+begin
+if (sComboBox1.Text=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+datamodule2.ADOTable2.Append;
+
+DataModule2.ADOTable2.FieldByName('id_produit').AsInteger:=DataModule2.ADOTable1.FieldByName('id_produit').AsInteger;
+
+DataModule2.ADOTable2.FieldByName('qte_commande').Asinteger:=strtoint(sDecimalSpinEdit4.Text);
+DataModule2.ADOTable2.FieldByName('date_facture').AsDateTime:=date();
+
+DataModule2.ADOTable2.FieldByName('prix_facture').asinteger:=strtoint(sCurrencyEdit4.Text);
+
+datamodule2.ADOTable2.Post;
+
+datamodule2.ADOTable1.Edit;
+datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger:=datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger-strtoint(sDecimalSpinEdit4.Text);
+datamodule2.ADOTable1.Post;
+
+end;
+
+if (sComboBox2.Text=datamodule2.ADOTable1.FieldByName('nom_produit').AsString)  then
+begin
+datamodule2.ADOTable2.Append;
+DataModule2.ADOTable2.FieldByName('id_produit').AsInteger:=DataModule2.ADOTable1.FieldByName('id_produit').AsInteger;
+DataModule2.ADOTable2.FieldByName('qte_commande').Asstring:=sDecimalSpinEdit5.Text;
+DataModule2.ADOTable2.FieldByName('date_facture').AsDateTime:=date();
+DataModule2.ADOTable2.FieldByName('prix_facture').asinteger:=strtoint(sCurrencyEdit5.Text);
+datamodule2.ADOTable2.Post;
+
+datamodule2.ADOTable1.Edit;
+datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger:=datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger-strtoint(sDecimalSpinEdit5.Text);
+datamodule2.ADOTable1.Post;
+
+end;
+
+if (sComboBox3.Text=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+datamodule2.ADOTable2.Append;
+DataModule2.ADOTable2.FieldByName('id_produit').AsInteger:=DataModule2.ADOTable1.FieldByName('id_produit').AsInteger;
+DataModule2.ADOTable2.FieldByName('qte_commande').Asstring:=sDecimalSpinEdit6.Text;
+DataModule2.ADOTable2.FieldByName('date_facture').AsDateTime:=date();
+DataModule2.ADOTable2.FieldByName('prix_facture').asinteger:=strtoint(sCurrencyEdit6.Text);
+datamodule2.ADOTable2.Post;
+
+datamodule2.ADOTable1.Edit;
+datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger:=datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger-strtoint(sDecimalSpinEdit6.Text);
+datamodule2.ADOTable1.Post;
+
+end;
+
+if (sComboBox4.Text=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+datamodule2.ADOTable2.Append;
+DataModule2.ADOTable2.FieldByName('id_produit').AsInteger:=DataModule2.ADOTable1.FieldByName('id_produit').AsInteger;
+DataModule2.ADOTable2.FieldByName('qte_commande').Asstring:=sDecimalSpinEdit8.Text;
+DataModule2.ADOTable2.FieldByName('date_facture').AsDateTime:=date();
+DataModule2.ADOTable2.FieldByName('prix_facture').asinteger:=strtoint(sCurrencyEdit7.Text);
+datamodule2.ADOTable2.Post;
+
+datamodule2.ADOTable1.Edit;
+datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger:=datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger-strtoint(sDecimalSpinEdit8.Text);
+datamodule2.ADOTable1.Post;
+
+end;
+
+if (sComboBox5.Text=datamodule2.ADOTable1.FieldByName('nom_produit').AsString) then
+begin
+datamodule2.ADOTable2.Append;
+DataModule2.ADOTable2.FieldByName('id_produit').AsInteger:=DataModule2.ADOTable1.FieldByName('id_produit').AsInteger;
+DataModule2.ADOTable2.FieldByName('qte_commande').Asstring:=sDecimalSpinEdit9.Text;
+DataModule2.ADOTable2.FieldByName('date_facture').AsDateTime:=date();
+DataModule2.ADOTable2.FieldByName('prix_facture').asinteger:=strtoint(sCurrencyEdit8.Text);
+datamodule2.ADOTable2.Post;
+
+datamodule2.ADOTable1.Edit;
+
+datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger:=datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger-strtoint(sDecimalSpinEdit9.Text);
+datamodule2.ADOTable1.Post;
+
+end;
+
+if (sComboBox6.Text=datamodule2.ADOTable1.FieldByName('nom_produit').AsString)  then
+begin
+datamodule2.ADOTable2.Append;
+DataModule2.ADOTable2.FieldByName('id_produit').AsInteger:=DataModule2.ADOTable1.FieldByName('id_produit').AsInteger;
+DataModule2.ADOTable2.FieldByName('qte_commande').Asstring:=sDecimalSpinEdit10.Text;
+
+DataModule2.ADOTable2.FieldByName('date_facture').AsDateTime:=date();
+DataModule2.ADOTable2.FieldByName('prix_facture').asinteger:=strtoint(sCurrencyEdit9.Text);
+datamodule2.ADOTable2.Post;
+
+datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger:=datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger-strtoint(sDecimalSpinEdit10.Text);
+datamodule2.ADOTable1.Post;
+
+end;
+
+if (sComboBox7.Text=datamodule2.ADOTable1.FieldByName('nom_produit').AsString)  then
+begin
+datamodule2.ADOTable2.Append;
+datamodule2.ADOTable1.Edit;
+DataModule2.ADOTable2.FieldByName('id_produit').AsInteger:=DataModule2.ADOTable1.FieldByName('id_produit').AsInteger;
+DataModule2.ADOTable2.FieldByName('qte_commande').Asstring:=sDecimalSpinEdit7.Text;
+DataModule2.ADOTable2.FieldByName('date_facture').AsDateTime:=date();
+DataModule2.ADOTable2.FieldByName('prix_facture').asinteger:=strtoint(sCurrencyEdit10.Text);
+datamodule2.ADOTable2.Post;
+datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger:=datamodule2.ADOTable1.FieldByName('quantite_produit').AsInteger-strtoint(sDecimalSpinEdit7.Text);
+datamodule2.ADOTable1.Post;
+end;
+
+
+datamodule2.ADOTable1.next;
+end;
+end;
+end;
+
+ShowMessage('Le client doit payer '+inttostr(s));
+sPanel4.Visible:=false;
+sGroupBox8.Visible:=false;
+sPanel2.Visible:=false;
+sGroupBox5.Visible:=false;
+
+sPanel3.Visible:=false;
+sGroupBox6.Visible:=false;
+
+
+sCurrencyEdit4.Text:='0';
+sCurrencyEdit5.Text:='0';
+sCurrencyEdit6.Text:='0';
+sCurrencyEdit7.Text:='0';
+sCurrencyEdit8.Text:='0';
+sCurrencyEdit9.Text:='0';
+sCurrencyEdit10.Text:='0';
+
+sDecimalSpinEdit3.Text:='1';
+sDecimalSpinEdit4.Text:='1';
+sDecimalSpinEdit5.Text:='1';
+sDecimalSpinEdit6.Text:='1';
+sDecimalSpinEdit7.Text:='1';
+sDecimalSpinEdit8.Text:='1';
+sDecimalSpinEdit9.Text:='1';
+
+sComboBox1.Text:='';
+sComboBox2.Text:='';
+sComboBox3.Text:='';
+sComboBox4.Text:='';
+sComboBox5.Text:='';
+sComboBox6.Text:='';
+sComboBox7.Text:='';
+sLabel12.Caption:='                   DA';
+
+
+end;
+procedure TForm1.P2Click(Sender: TObject);
+var d : TDateTime;
+    jour,mois,annee,jour_nom:string;
+    x: integer;
+
+begin
+sPanel4.Visible:=false;
+sGroupBox8.Visible:=false;
+sPanel2.Visible:=false;
+sGroupBox5.Visible:=false;
+
+sPanel3.Visible:=false;
+sGroupBox6.Visible:=false;
+sGroupBox10.Visible:=true;
+
+datamodule2.ADOTable1.close;
+datamodule2.ADOQuery_rech_produit_date.close;
+//datamodule2.DataSource1.DataSet:=datamodule2.ADOQuery_rech_produit_date;
+datamodule2.ADOQuery_rech_produit_date.Parameters.ParamByName('date').Value:=date();
+//datamodule2.DataSource_compte_admin.DataSet:=datamodule10.ADOQuery_authentification;
+DataModule2.adoquery_rech_produit_date.Open;
+if (datamodule2.adoquery_rech_produit_date.RecordCount>=1) then
+begin
+while not (datamodule2.ADOQuery_rech_produit_date.Eof) do
+begin
+sComboBox8.Items.Add(datamodule2.ADOQuery_rech_produit_date.Fields[1].Value);
+datamodule2.ADOQuery_rech_produit_date.next;
+end;
+
+end
+else
+sComboBox8.Items.Add('Aucun Produit ajouté');
+
+
+DataModule2.adoquery_rech_produit_date.Close;
+DataModule2.ADOQuery_rech_modif_date.Close;
+//datamodule2.DataSource1.DataSet:=datamodule2.ADOQuery_rech_modif_date;
+
+datamodule2.ADOQuery_rech_modif_date.Parameters.ParamByName('date').Value:=date();
+
+DataModule2.ADOQuery_rech_modif_date.Open;
+
+if (datamodule2.ADOQuery_rech_modif_date.RecordCount>=1) then
+begin
+while not (datamodule2.ADOQuery_rech_modif_date.Eof) do
+begin
+sComboBox9.Items.Add(datamodule2.ADOQuery_rech_modif_date.Fields[1].Value);
+datamodule2.ADOQuery_rech_modif_date.next;
+end;
+
+end
+else
+sComboBox9.Items.Add('Aucun Produit modifié');
+
+DataModule2.ADOQuery_rech_modif_date.Close;
+
+DataModule2.ADOQuery_date_semaine.Close;
+//datamodule2.DataSource1.DataSet:=datamodule2.ADOQuery_date_semaine;
+
+
+jour :=copy(datetostr(date),1,2);
+mois:=copy(datetostr(date),4,2);
+annee:=copy(datetostr(date),7,4);
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour));
+showmessage(datetostr(d));
+
+jour_nom :=longdaynames[dayofweek(d)];
+
+DataModule2.ADOQuery_date_semaine.open;
+
+if (jour_nom='dimanche') then
+begin
+ShowMessage('yassine');
+//datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date1').DataType:=TDate;
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date1').Value:=date;
+
+//d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)+6);
+//datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date2').DataType:=TDateField;
+
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date2').Value:=date;
+showmessage(datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date2').Value);
+
+end;
+if (jour_nom='lundi') then
+begin
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date1').Value:=Yesterday;
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)+5);
+
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date2').Value:=d;
+end;
+
+if (jour_nom='mardi') then
+begin
+
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)-2);
+
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date1').Value:=d;
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)+4);
+
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date2').Value:=d;
+end;
+
+if (jour_nom='mercredi') then
+begin
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)-3);
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date1').Value:=d;
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)+3);
+
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date2').Value:=d;
+end;
+if (jour_nom='jeudi') then
+begin
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)-4);
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date1').Value:=d;
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)+2);
+
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date2').Value:=d;
+end;
+if (jour_nom='vendredi') then
+begin
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)-5);
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date1').Value:=d;
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)+1);
+
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date2').Value:=d;
+end;
+if (jour_nom='samedi') then
+begin
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),StrToInt(jour)-6);
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date1').Value:=d;
+
+datamodule2.ADOQuery_date_semaine.Parameters.ParamByName('date2').Value:=Tomorrow;
+end;
+
+
+showmessage (inttostr(datamodule2.ADOQuery_date_semaine.RecordCount));
+if (datamodule2.ADOQuery_date_semaine.RecordCount>=1) then
+begin
+while not (datamodule2.ADOQuery_date_semaine.Eof) do
+begin
+sComboBox10.Items.Add(datamodule2.ADOQuery_date_semaine.Fields[1].Value);
+datamodule2.ADOQuery_date_semaine.next;
+end;
+end
+else
+sComboBox10.Items.Add('Aucun Produit ajouté');
+
+
+jour :=copy(datetostr(date),1,2);
+mois:=copy(datetostr(date),4,2);
+annee:=copy(datetostr(date),7,4);
+d:=EncodeDate(StrToInt(annee),StrToInt(mois),1);
+DataModule2.ADOQuery_date_mois.Close;
+DataModule2.ADOQuery_date_mois.open;
+
+DataModule2.ADOQuery_date_mois.Parameters.ParamByName('date1').Value:=d;
+d:=EncodeDate(StrToInt(annee),StrToInt(mois)+1,1);
+DataModule2.ADOQuery_date_mois.Parameters.ParamByName('date2').Value:=d;
+
+if (datamodule2.ADOQuery_date_mois.RecordCount>=1) then
+begin
+while not (datamodule2.ADOQuery_date_mois.Eof) do
+begin
+sComboBox11.Items.Add(datamodule2.ADOQuery_date_mois.Fields[1].Value);
+datamodule2.ADOQuery_date_mois.next;
+end;
+end
+else
+sComboBox11.Items.Add('Aucun Produit ajouté');
+
+
+DataModule2.ADOQuery_qte_critique.Close;
+DataModule2.ADOQuery_qte_critique.open;
+
+
+if (datamodule2.ADOQuery_qte_critique.RecordCount>=1) then
+begin
+while not (datamodule2.ADOQuery_qte_critique.Eof) do
+begin
+sComboBox12.Items.Add(datamodule2.ADOQuery_qte_critique.Fields[1].Value+' ,'+'qte :'+inttostr(datamodule2.ADOQuery_qte_critique.Fields[3].Value) );
+datamodule2.ADOQuery_qte_critique.next;
+end;
+end
+else
+sComboBox12.Items.Add('Aucun Produit ajouté');
+
+
+
+end;
+
+procedure TForm1.sSpeedButton15Click(Sender: TObject);
+begin
+sPanel4.Visible:=false;
+sGroupBox8.Visible:=false;
+sPanel2.Visible:=false;
+sGroupBox5.Visible:=false;
+
+sPanel3.Visible:=false;
+sGroupBox6.Visible:=false;
+sGroupBox10.Visible:=false;
+sGroupBox11.Visible:=false;
+
+
+end;
+
+procedure TForm1.F2Click(Sender: TObject);
+var somme,qte: integer;
+    price: string;
+begin
+somme:=0;
+sPanel4.Visible:=false;
+sGroupBox8.Visible:=false;
+sPanel2.Visible:=false;
+sGroupBox5.Visible:=false;
+
+sPanel3.Visible:=false;
+sGroupBox6.Visible:=false;
+sGroupBox10.Visible:=false;
+sGroupBox11.Visible:=true;
+
+DataModule2.ADOTable2.Close;
+DataModule2.ADOTable2.Open;
+while not (datamodule2.ADOTable2.Eof) do
+begin
+DataModule2.ADOTable2.Next;
+end;
+
+sLabel27.Caption :=inttostr(DataModule2.ADOTable2.Fields[4].Value)+' DA';
+
+DataModule2.ADOQuery_rech_vente.close;
+DataModule2.ADOQuery_rech_vente.Parameters.ParamByName('date').Value:=date;
+
+DataModule2.ADoquery_rech_vente.Open;
+
+if (datamodule2.ADOQuery_rech_vente.RecordCount>=1) then
+begin
+while not (datamodule2.ADoquery_rech_vente.Eof) do
+begin
+somme:=somme+strtoint(DataModule2.ADOQuery_rech_vente.Fields[4].value);
+qte:=qte+strtoint(DataModule2.ADOQuery_rech_vente.Fields[2].value);
+DataModule2.ADOQuery_rech_vente.next;
+end;
+slabel29.caption:=inttostr(somme)+' DA';
+sLabel31.Caption:=inttostr(qte)+' pièce(s)';
+end
+else
+begin
+slabel29.caption:='0 DA';
+slabel31.caption:='0 pièce(s)';
+end;
+
+
+
+
+
+end;
+
